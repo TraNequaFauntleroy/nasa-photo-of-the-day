@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-
 import Title from './Title'
 import Image from './Image'
 import Copyright from './Copyright'
@@ -27,19 +26,18 @@ export default function App() {
       setDate(res.data.date)
       setExplanation(res.data.explanation)
     })
-    .catch(err => {
+    .catch(error => {
       setError('Sorry! We are working on this')
     })
   }, [])
 
   return (
     <div className="App">
-      <Title title ={title}/>
+      <Title title ={title} />
       <Image url={url} />
-      <Copyright copyright={copyright}/>
+      <Copyright copyright={copyright} /> 
       <Date date={date} />
-      <Explanation explanation={explanation}/>
-
+      <Explanation explanation={explanation} />
     </div>
   );
 }
